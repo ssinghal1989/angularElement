@@ -1,0 +1,37 @@
+<div class="container">
+    <h2 style="padding-left: 12px; margin: 20px 0px 15px 0px">Order Form</h2>
+    <form class="form-horizontal" [formGroup]="orderForm" (ngSubmit)="placeOrder()">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="action">Action:</label>
+        <div class="col-sm-10">
+          <select class="form-control" formControlName="action" name="action">
+            <option [value]="action" *ngFor="let action of actions">{{action}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="quantity">Quantity:</label>
+        <div class="col-sm-10">          
+          <input type="text" myNumberOnly formControlName="quantity" class="form-control" id="quantity" placeholder="Enter Quantity" name="quantity">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="product">Product:</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="product" class="form-control" id="product" placeholder="Enter Product Name" name="product">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="price">Price:</label>
+        <div class="col-sm-10">
+          <input type="text" myNumberOnly formControlName="price" class="form-control" id="price" placeholder="Enter Price" name="price">
+        </div>
+      </div>
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Place Order</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

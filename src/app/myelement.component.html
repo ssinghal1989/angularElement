@@ -1,0 +1,5 @@
+<app-stock-order *ngIf="type == 'form'"></app-stock-order>
+<app-graph [graphData]="data" *ngIf="type == 'bargraph'"></app-graph>
+<div *ngIf="type == 'simpleDiv'" style="border: 1px solid red;text-align: center;width: 100%;padding: 10px;">
+    {{data}}
+</div>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Angular Element Example</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/@webcomponents/webcomponentsjs@1.0.22/webcomponents-sd-ce.js"></script>
+	<script src="my-element.js"></script>
+
+
+
+</head>
+
+<body>
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<my-element type="form"></my-element>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding:20px">
+			<my-element type="simpleDiv" data="This is a simple message"></my-element>
+		</div>
+	</div>
+	<div class="row">
+		<div style="margin-left: 10%;margin-top: 20px;" class="col-lg-8 col-md-8 col-sm-8 col-xs-12" id="graphContainer">
+
+		</div>
+	</div>
+
+
+</body>
+<script>
+	var data = { "labels": ["Facebook", "Google", "Sapient", "IBM"], "datasets": [{ "label": "Stock Price Data", "data": [110, 45, 67, 98], "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(255, 159, 64, 0.2)"], "borderColor": ["rgba(255,99,132,1)", "rgba(54, 162, 235, 1)", "rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)", "rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)"], "borderWidth": 1 }] };
+	var myEl = document.createElement('my-element');
+	myEl.setAttribute("data", JSON.stringify(data));
+	myEl.setAttribute("type", 'bargraph');
+	document.getElementById('graphContainer').appendChild(myEl); 
+</script>
+
+</html>
